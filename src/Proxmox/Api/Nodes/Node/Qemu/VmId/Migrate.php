@@ -13,7 +13,7 @@ use Proxmox\API;
  * Class Migration
  * @package Proxmox\Api\Nodes\Node\Qemu\VmId
  */
-class Migration extends PVEPathClassBase
+class Migrate extends PVEPathClassBase
 {
     /**
      * Init constructor.
@@ -22,12 +22,12 @@ class Migration extends PVEPathClassBase
      */
     public function __construct(PVE|API $pve, string $parentAdditional)
     {
-        parent::__construct($pve, $parentAdditional . 'migration/');
+        parent::__construct($pve, $parentAdditional . 'migrate/');
     }
 
     /**
      * Get preconditions for migration.
-     * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/migration
+     * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/migrate
      * @return array|null
      */
     public function get(): ?array
@@ -37,7 +37,7 @@ class Migration extends PVEPathClassBase
 
     /**
      * Migrate the container to another node. Creates a new migration task.
-     * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/migration
+     * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/qemu/{vmid}/migrate
      * @param $params array
      * @return array|null
      */

@@ -132,9 +132,9 @@ class VmId extends PVEPathClassBase
      * @link https://pve.proxmox.com/pve-docs/api-viewer/#/nodes/{node}/Qemu/{vmid}/migration
      * @return Migration
      */
-    public function migration(): Migration
+    public function migrate(): Migration
     {
-        return new Migration($this->getPve(), $this->getPathAdditional());
+        return new Migrate($this->getPve(), $this->getPathAdditional());
     }
 
     /**
